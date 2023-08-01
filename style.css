@@ -1,5 +1,10 @@
-section {
+.custom{
+    /* CSS styles for the first child */
     height: 100vh;
-    width: auto;
-    /* border-style: solid; */
+}
+
+.shadow-lg {
+    background-color: #fff !important;
+    /* Set your desired background color */
+    box-shadow: 8px 8px 10px rgba(255, 0, 0, 0.5) !important;
 }
