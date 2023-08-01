@@ -13,21 +13,21 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container mx-auto px-auto">
-            <a class="navbar-brand" href="#">Logo</a>
+        <div class="container mx-auto px-4">
+            <img src="/assets/croping.png" alt="logo" width="110px">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a class="nav-link active" aria-current="page" href="#pesertaFeature">Perserta</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a class="nav-link active" aria-current="page" href="#panitiaFeature">Panitia</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a class="nav-link active" aria-current="page" href="#rekomendasiLomba">Reccomend</a>
                     </li>
                 </ul>
@@ -36,11 +36,11 @@
 
     <!-- landing Pages -->
     <section>
-        <div class="container col-xxl-8 px-4 py-5">
+        <div class="container col-xxl-8 px-4 pt-3">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div class="col-12 col-sm-8 col-lg-6 text-center"> <!-- Change col-10 to col-12 -->
                     <img src="https://img.freepik.com/premium-vector/cute-boy-selebrating-indonesian-independent-day_629619-87.jpg?w=740"
-                        class="d-md-none d-sm-none d-none d-lg-block mx-auto img-fluid" alt="Bootstrap Themes"
+                        class="d-md-none d-sm-none d-none d-lg-block ms-auto img-fluid" alt="Bootstrap Themes"
                         width="300" height="300" loading="lazy"> <!-- Remove mx-lg-auto -->
                 </div>
                 <div class="col-lg-6">
@@ -59,12 +59,24 @@
     </section>
 
     <!-- Feature 1 -->
-    <!-- <section style="margin: 100px;">
-        jam mundur
-    </section> -->
-
+    <section>
+        <div class="container d-flex justify-content-center mb-3">
+            <div class="d-flex align-items-center cooldown">
+                <div class="d-flex justify-content-center">
+                    <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" id="day">Day</div>
+                    <div class="p-3 mb-5">:</div>
+                    <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" id="hour">Hours</div>
+                    <div class="p-3 mb-5">:</div>
+                    <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" id="minute">Minute</div>
+                    <div class="p-3 mb-5">:</div>
+                    <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" id="second">Second</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Feature 2 peserta-->
-    <section id="pesertaFeature">
+    <section class="custom" id="pesertaFeature">
         <div class="container">
             <div class="d-flex d-flex justify-content-around mw-100 mh-100">
                 <form class="my-5 shadow p-3 mb-5 bg-body rounded p-5 rounded">
@@ -98,7 +110,7 @@
     </section>
 
     <!-- Feature 3 Panitia-->
-    <section id="panitiaFeature">
+    <section class="custom" id="panitiaFeature">
         <div class="container">
             <div class="d-flex d-flex justify-content-around mw-100 mh-100">
                 <form class="my-5 shadow p-3 mb-5 bg-body rounded p-5 rounded">
@@ -130,9 +142,9 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Feature 4 -->
-    <section id="rekomendasiLomba">
+    <section class="custom" id="rekomendasiLomba">
         <div class="container mt-4 pt-5">
             <h1 class="text-center mb-3">Rekomendasi Perlombaan</h1>
             <div class="mx-3 mt-5">
