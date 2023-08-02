@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
 .custom{
     /* CSS styles for the first child */
     height: 100vh;
@@ -6,5 +11,10 @@
 .shadow-lg {
     background-color: #fff !important;
     /* Set your desired background color */
-    box-shadow: 8px 8px 10px rgba(255, 0, 0, 0.5) !important;
+    box-shadow: 8px 8px 4px rgba(255, 0, 0, 0.7) !important;
+}
+
+.cooldown {
+    /* border: solid; */
+    width: 50%;
 }
