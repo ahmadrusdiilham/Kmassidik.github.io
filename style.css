@@ -3,18 +3,27 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
-.custom{
-    /* CSS styles for the first child */
-    height: 100vh;
-}
 
+@media only screen and (min-width: 600px) {
+    .custom{
+        height: 100vh;
+        margin-bottom: 75px;
+    }
+}
 .shadow-lg {
     background-color: #fff !important;
-    /* Set your desired background color */
-    box-shadow: 8px 8px 4px rgba(255, 0, 0, 0.7) !important;
+    box-shadow: 8px 7px 4px rgba(255, 0, 0, 0.7) !important;
 }
-
 .cooldown {
     /* border: solid; */
     width: 50%;
+}
+.card-body {
+    height: 70px;
+}
+.card {
+    margin-bottom: 20px;
+}
+.card img {
+    height: 300px;
 }
