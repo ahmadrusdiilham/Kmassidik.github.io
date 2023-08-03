@@ -22,16 +22,16 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 
 const dataPermainan = [
-    { nama: "John Doe", age: 25, jenisLomba: "balap karung" },
-    { nama: "Jane Smith", age: 30, jenisLomba: "balap karung" },
-    { nama: "Michael Johnson", age: 28, jenisLomba: "makan kerupuk" },
-    { nama: "Emily Brown", age: 22, jenisLomba: "catur" },
-    { nama: "Robert Lee", age: 27, jenisLomba: "pensil dalam botol" },
-    { nama: "Sophia Miller", age: 24, jenisLomba: "enggrang" },
-    { nama: "William Wilson", age: 26, jenisLomba: "balap karung" },
-    { nama: "Olivia Taylor", age: 29, jenisLomba: "kelereng" },
-    { nama: "James Anderson", age: 23, jenisLomba: "makan kerupuk" },
-    { nama: "Ava Martinez", age: 31, jenisLomba: "catur" },
+    // { nama: "John Doe", age: 25, jenisLomba: "balap karung" },
+    // { nama: "Jane Smith", age: 30, jenisLomba: "balap karung" },
+    // { nama: "Michael Johnson", age: 28, jenisLomba: "makan kerupuk" },
+    // { nama: "Emily Brown", age: 22, jenisLomba: "catur" },
+    // { nama: "Robert Lee", age: 27, jenisLomba: "pensil dalam botol" },
+    // { nama: "Sophia Miller", age: 24, jenisLomba: "enggrang" },
+    // { nama: "William Wilson", age: 26, jenisLomba: "balap karung" },
+    // { nama: "Olivia Taylor", age: 29, jenisLomba: "kelereng" },
+    // { nama: "James Anderson", age: 23, jenisLomba: "makan kerupuk" },
+    // { nama: "Ava Martinez", age: 31, jenisLomba: "catur" },
 ];
 
 // dont delete this
