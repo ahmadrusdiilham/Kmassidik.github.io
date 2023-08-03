@@ -6,8 +6,12 @@ function updateCountdown() {
 
   if (timeRemaining > 0) {
     const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    const hours = Math.floor(
+      (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+      (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+    );
     const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
     // const countdownString = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
@@ -131,7 +135,14 @@ let top3Results = getTop3(res);
 domsorting(top3Results);
 
 // CRUD PESERTA
-const lomba = ["balap karung", "kelereng", "makan kerupuk", "catur", "pensil dalam botol", "egrang"];
+const lomba = [
+  "balap karung",
+  "kelereng",
+  "makan kerupuk",
+  "catur",
+  "pensil dalam botol",
+  "egrang",
+];
 
 let masterData = [
   { id: 1, nama: "Eren", umur: 12, lomba: "kelereng" },
@@ -152,7 +163,12 @@ function createNewData(e) {
 
   if (onEdit == false) {
     let id = masterData[masterData.length - 1].id + 1;
-    masterData.push({ id, nama: namaPeserta, umur: umurPeserta, lomba: pilihanLomba });
+    masterData.push({
+      id,
+      nama: namaPeserta,
+      umur: umurPeserta,
+      lomba: pilihanLomba,
+    });
     console.log(masterData);
   } else {
     let find = "";
@@ -163,7 +179,12 @@ function createNewData(e) {
       }
     }
     // console.log(find);
-    let editedData = { id: masterData[find].id, nama: namaPeserta, umur: umurPeserta, lomba: pilihanLomba };
+    let editedData = {
+      id: masterData[find].id,
+      nama: namaPeserta,
+      umur: umurPeserta,
+      lomba: pilihanLomba,
+    };
     masterData[find] = editedData;
     onEdit = false;
     targetEdit = "";
@@ -229,3 +250,113 @@ function render() {
 }
 render();
 console.log(masterData);
+
+// crud panitia
+// BAGIAN PENDAFTARAN PANITIA
+
+let masterDataPanitia = [
+  { id: 1, nama: "bani", umur: 23, lomba: "balap karung" },
+  { id: 2, nama: "dimas", umur: 22, lomba: "balap karung" },
+  { id: 3, nama: "caca", umur: 13, lomba: "kelereng" },
+];
+
+let dataPanitia = document.getElementById("data-panitia");
+let onEditPanitia = false;
+let targetEditPanitia = "";
+
+function dataBaru(e) {
+  e.preventDefault();
+  let namaPanitia = document.getElementById("nama-panitia").value;
+  let umurPanitia = document.getElementById("umur-panitia").value;
+  let pilihanLomba = document.getElementById("pilihan-lomba-panitia").value;
+
+  if (onEditPanitia == false) {
+    let id = masterDataPanitia[masterDataPanitia.length - 1].id + 1;
+    masterDataPanitia.push({
+      id,
+      nama: namaPanitia,
+      umur: umurPanitia,
+      lomba: pilihanLomba,
+    });
+    console.log(masterDataPanitia);
+  } else {
+    let find = "";
+    for (let i = 0; i < masterDataPanitia.length; i++) {
+      const element = masterDataPanitia[i];
+      if (element.id === targetEditPanitia) {
+        find = i;
+      }
+    }
+    // console.log(find);
+    let editedDataPanitia = {
+      id: masterDataPanitia[find].id,
+      nama: namaPanitia,
+      umur: umurPanitia,
+      lomba: pilihanLomba,
+    };
+    masterDataPanitia[find] = editedDataPanitia;
+    onEditPanitia = false;
+    targetEditPanitia = "";
+  }
+
+  // console.log(`${namaPeserta} ${umurPeserta} ${pilihanLomba}`);
+  document.getElementById("nama-panitia").value = "";
+  document.getElementById("umur-panitia").value = "";
+  document.getElementById("pilihan-lomba-panitia").value = "";
+  document.getElementById("data-panitia").innerHTML = "";
+
+  renderPanitia();
+  console.log(masterDataPanitia);
+}
+
+function renderPanitia() {
+  let nomer = 0;
+  for (const perData of masterDataPanitia) {
+    nomer++;
+    let { id, nama, umur, lomba } = perData;
+    let newRow = document.createElement("tr");
+    let newCol1 = document.createElement("td");
+    newCol1.innerHTML = nomer;
+    let newCol2 = document.createElement("td");
+    newCol2.innerHTML = nama;
+    let newCol3 = document.createElement("td");
+    newCol3.innerHTML = umur;
+    let newCol4 = document.createElement("td");
+    newCol4.innerHTML = lomba;
+    let newCol5 = document.createElement("button");
+    newCol5.innerText = "Delete";
+    let newCol6 = document.createElement("button");
+    newCol6.innerText = "Edit";
+    newCol5.onclick = function hapusData() {
+      let tag = Number(newCol1.innerHTML);
+      let temp = [];
+      for (let i = 0; i < masterDataPanitia.length; i++) {
+        let element = masterDataPanitia[i];
+        if (i !== tag - 1) {
+          temp.push(element);
+        }
+      }
+      masterDataPanitia = temp;
+      document.getElementById("data-panitia").innerHTML = "";
+      renderPanitia();
+      console.log(masterDataPanitia);
+    };
+    newCol6.onclick = function ubah() {
+      onEditPanitia = true;
+      targetEditPanitia = id;
+      document.getElementById("nama-panitia").value = newCol2.innerHTML;
+      document.getElementById("umur-panitia").value = newCol3.innerHTML;
+      document.getElementById("pilihan-lomba-panitia").value =
+        newCol4.innerHTML;
+    };
+    newRow.appendChild(newCol1);
+    newRow.appendChild(newCol2);
+    newRow.appendChild(newCol3);
+    newRow.appendChild(newCol4);
+    newRow.appendChild(newCol5);
+    newRow.appendChild(newCol6);
+    dataPanitia.appendChild(newRow);
+  }
+}
+renderPanitia();
+console.log(masterDataPanitia);
